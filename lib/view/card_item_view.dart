@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../model/card_model.dart';
-import '../viewmodel/cards_view_model.dart';
 
 class CardItemView extends StatelessWidget {
   final CardModel? card;
-
-   CardItemView({Key? key, this.card}) : super(key: key);
-  late CardsViewModel _vm;
+   const CardItemView({Key? key, this.card}) : super(key: key);
 
 
   @override
@@ -27,12 +24,10 @@ class CardItemView extends StatelessWidget {
   ListTile get _buildDescriptionItem {
     return ListTile(
       title: Text(card!.author.toString()),
-      subtitle: Text('H=${card!.height} / W=${card!.width}'),
+      subtitle: Text('Height=${card!.height} / Width=${card!.width}'),
       trailing: IconButton(
         icon: const Icon(Icons.favorite_border),
-        onPressed: () {
-          print(card!.id);
-        },
+        onPressed: () {},
       ),
     );
   }
