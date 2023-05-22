@@ -5,6 +5,8 @@ import 'package:task_infinity_scroll/viewmodel/cards_view_model.dart';
 import 'card_item_view.dart';
 
 class CardsView extends StatefulWidget {
+  const CardsView({Key? key}) : super(key: key);
+
   @override
   _CardsViewState createState() => _CardsViewState();
 }
@@ -21,6 +23,7 @@ class _CardsViewState extends State<CardsView> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -35,7 +38,7 @@ class _CardsViewState extends State<CardsView> {
           padding: const EdgeInsets.all(16.0),
           itemCount: _vm.cards.length + 1,
           itemBuilder: (context, index) {
-            if (index == _vm.cards.length) {
+            if (index == _vm.cards.length ) {
               _vm.fetchCards();
               return _buildLoading;
             }
@@ -48,8 +51,13 @@ class _CardsViewState extends State<CardsView> {
   }
 
   Center get _buildLoading {
-    return Center(
-      child: CircularProgressIndicator(),
+    return const Center(
+      child: SizedBox(
+        width: 20,
+          height: 20,
+          child: CircularProgressIndicator(
+              strokeWidth: 2,
+          )),
     );
   }
 }

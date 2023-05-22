@@ -13,7 +13,7 @@ abstract class _CardsViewModel with Store {
 
   bool isFetchData = false;
   int _page = 1;
-  int _limit = 5;
+  int _limit = 10;
 
   void init() {
     _service = CardService();
