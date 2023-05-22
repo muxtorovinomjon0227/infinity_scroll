@@ -14,7 +14,7 @@ class CardItemView extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      elevation: 5,
+      elevation: 8,
       child: Column(
         children: [_buildImageItem, _buildDescriptionItem],
       ),
@@ -23,8 +23,8 @@ class CardItemView extends StatelessWidget {
 
   ListTile get _buildDescriptionItem {
     return ListTile(
-      title: Text(card!.author.toString()),
-      subtitle: Text('Height=${card!.height} / Width=${card!.width}'),
+      title: Text("Name: ${card!.author.toString()}"),
+      subtitle: Text('Height: ${card!.height} / Width: ${card!.width}'),
       trailing: IconButton(
         icon: const Icon(Icons.favorite_border),
         onPressed: () {},
